@@ -19,14 +19,14 @@ public class NightClubFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
 
         ArrayList<Site> nightClub = new ArrayList<>();
-        nightClub.add(new Site(R.drawable.club_central, "Central", "Trg Gaje Bulata 4", "12:30 - 6 AM", "091 332 3234"));
-        nightClub.add(new Site(R.drawable.club_judino_drvo, "Judas Tree", "Kopilica ulica", "9 PM - 4 AM", "095 766 2367"));
-        nightClub.add(new Site(R.drawable.club_kauri, "Kauri", "Poljička cesta", "Open 24 hours", "099 242 44444"));
-        nightClub.add(new Site(R.drawable.club_quasimodo, "Quasimodo", "Ulica Ivana Gundulića 26", "", "091 934 273"));
-        nightClub.add(new Site(R.drawable.club_tropic, "Tropic", "Plaža Bačvice", "10 PM - 4 AM", "099 203 9222"));
-        nightClub.add(new Site(R.drawable.club_vanilla, "Vanilla", "Poljudsko šetalište b.b.", "10 PM - 5 AM", "099 831 3050"));
-        nightClub.add(new Site(R.drawable.club_velvet, "Velvet", "Put Supavla 1A", "10 PM - 4 AM", "095 897 1277"));
-        nightClub.add(new Site(R.drawable.club_zenta, "Zenta", "Ulica Uvala Zenta 2", "10 AM - 6 AM", "098 455 578"));
+        nightClub.add(new Site(R.drawable.club_central, getString(R.string.club_central_name), getString(R.string.club_central_address), getString(R.string.club_central_working_hours), getString(R.string.club_central_number)));
+        nightClub.add(new Site(R.drawable.club_judino_drvo, getString(R.string.club_judino_drvo_name), getString(R.string.club_judino_drvo_address), getString(R.string.club_judino_drvo_working_hours), getString(R.string.club_judino_drvo_number)));
+        nightClub.add(new Site(R.drawable.club_kauri, getString(R.string.club_kauri_name), getString(R.string.club_kauri_address), getString(R.string.club_kauri_working_hours), getString(R.string.club_kauri_number)));
+        nightClub.add(new Site(R.drawable.club_quasimodo, getString(R.string.club_quasimodo_name), getString(R.string.club_quasimodo_address), getString(R.string.club_quasimodo_working_hours), getString(R.string.club_quasimodo_number)));
+        nightClub.add(new Site(R.drawable.club_tropic, getString(R.string.club_tropic_name), getString(R.string.club_tropic_address), getString(R.string.club_tropic_working_hours), getString(R.string.club_tropic_number)));
+        nightClub.add(new Site(R.drawable.club_vanilla, getString(R.string.club_vanilla_name), getString(R.string.club_vanilla_address), getString(R.string.club_vanilla_working_hours), getString(R.string.club_vanilla_number)));
+        nightClub.add(new Site(R.drawable.club_velvet, getString(R.string.club_velvet_name), getString(R.string.club_velvet_address), getString(R.string.club_velvet_working_hours), getString(R.string.club_velvet_number)));
+        nightClub.add(new Site(R.drawable.club_zenta, getString(R.string.club_zenta_name), getString(R.string.club_zenta_address), getString(R.string.club_zenta_working_hours), getString(R.string.club_zenta_number)));
 
         ListView listView = rootView.findViewById(R.id.list_view);
         SiteAdapter adapter = new SiteAdapter(getActivity(), nightClub, R.color.colorNightClub);

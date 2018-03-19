@@ -19,13 +19,13 @@ public class RestaurantFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
 
         ArrayList<Site> restaurant = new ArrayList<>();
-        restaurant.add(new Site(R.drawable.restaurant_augubio_congo, "Augubio Congo", "Dioklecijanova ulica 1", "8 AM - 10:45 PM", "099 323 9671"));
-        restaurant.add(new Site(R.drawable.restaurant_bajamonti, "Bajamonti", "Trg Republike 1", "7:30 AM - 12 AM", "021 341 033"));
-        restaurant.add(new Site(R.drawable.restaurant_bokeria, "Bokeria kitchen & wine bar", "Domaldova ulica 8", "9 AM - 1 AM", "021 355 577"));
-        restaurant.add(new Site(R.drawable.restaurant_dalmatino, "Dalmatino", "Ulica Ispod Svetog Lovre 2B", "10 AM - 12 AM", "021 320 004"));
-        restaurant.add(new Site(R.drawable.restaurant_graso, "Adriatic Grašo", "Uvala Baluni bb", "9 AM - 1 AM", "021 398 560"));
-        restaurant.add(new Site(R.drawable.restaurant_mazzgoon, "Mazzgoon", "Bajamontijeva ulica 1", "8 AM - 1 AM", "098 987 7780"));
-        restaurant.add(new Site(R.drawable.restaurant_perivoj, "Perivoj", "Slavićeva ulica 44", "9 AM - 12 AM", "021 785 875"));
+        restaurant.add(new Site(R.drawable.restaurant_augubio_congo, getString(R.string.restaurant_augubio_congo_name), getString(R.string.restaurant_augubio_congo_address), getString(R.string.restaurant_augubio_congo_working_hours), getString(R.string.restaurant_augubio_congo_number)));
+        restaurant.add(new Site(R.drawable.restaurant_bajamonti, getString(R.string.restaurant_bajamonti_name), getString(R.string.restaurant_bajamonti_address), getString(R.string.restaurant_bajamonti_working_hours), getString(R.string.restaurant_bajamonti_number)));
+        restaurant.add(new Site(R.drawable.restaurant_bokeria, getString(R.string.restaurant_bokeria_name), getString(R.string.restaurant_bokeria_address), getString(R.string.restaurant_bokeria_working_hours), getString(R.string.restaurant_bokeria_number)));
+        restaurant.add(new Site(R.drawable.restaurant_dalmatino, getString(R.string.restaurant_dalmatino_name), getString(R.string.restaurant_dalmatino_address), getString(R.string.restaurant_dalmatino_working_hours), getString(R.string.restaurant_dalmatino_number)));
+        restaurant.add(new Site(R.drawable.restaurant_graso, getString(R.string.restaurant_graso_name), getString(R.string.restaurant_graso_address), getString(R.string.restaurant_graso_working_hours), getString(R.string.restaurant_graso_number)));
+        restaurant.add(new Site(R.drawable.restaurant_mazzgoon, getString(R.string.restaurant_mazzgoon_name), getString(R.string.restaurant_mazzgoon_address), getString(R.string.restaurant_mazzgoon_working_hours), getString(R.string.restaurant_mazzgoon_number)));
+        restaurant.add(new Site(R.drawable.restaurant_perivoj, getString(R.string.restaurant_perivoj_name), getString(R.string.restaurant_perivoj_address), getString(R.string.restaurant_perivoj_working_hours), getString(R.string.restaurant_perivoj_number)));
         ListView listView = rootView.findViewById(R.id.list_view);
         SiteAdapter adapter = new SiteAdapter(getActivity(), restaurant, R.color.colorRestaurant);
         listView.setAdapter(adapter);

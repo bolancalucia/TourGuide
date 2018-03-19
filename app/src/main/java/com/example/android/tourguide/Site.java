@@ -1,17 +1,16 @@
 package com.example.android.tourguide;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 
-public class Site extends AppCompatActivity{
+public class Site extends AppCompatActivity {
 
     private final String DEFAULT_SIZE = "-1";
     private int mImageResourceId;
     private String mName;
     private String mAddress = DEFAULT_SIZE;
-    private String mTelephoneNumber =DEFAULT_SIZE;
-    private String mWorkingHours =DEFAULT_SIZE;
-    private String mDescription =DEFAULT_SIZE;
+    private String mTelephoneNumber = DEFAULT_SIZE;
+    private String mWorkingHours = DEFAULT_SIZE;
+    private String mDescription = DEFAULT_SIZE;
 
     public Site(int imageResourceId, String name, String description) {
         mImageResourceId = imageResourceId;
@@ -19,7 +18,7 @@ public class Site extends AppCompatActivity{
         mDescription = description;
     }
 
-    public Site(String name, int imageResourceId,String address) {
+    public Site(String name, int imageResourceId, String address) {
         mImageResourceId = imageResourceId;
         mName = name;
         mAddress = address;
@@ -65,19 +64,19 @@ public class Site extends AppCompatActivity{
     }
 
     public boolean hasAddress() {
-        return mAddress!=DEFAULT_SIZE;
+        return !mAddress.equals(DEFAULT_SIZE);
     }
 
     public boolean hasNumber() {
-        return  mTelephoneNumber!=DEFAULT_SIZE;
+        return !mTelephoneNumber.equals(DEFAULT_SIZE);
     }
 
     public boolean hasHours() {
-        return  mWorkingHours!=DEFAULT_SIZE;
+        return !mWorkingHours.equals(DEFAULT_SIZE);
     }
 
     public boolean hasDescription() {
-        return  mDescription!=DEFAULT_SIZE;
+        return !mDescription.equals(DEFAULT_SIZE);
     }
 
     @Override

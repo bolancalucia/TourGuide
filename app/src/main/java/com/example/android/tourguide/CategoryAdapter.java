@@ -13,7 +13,6 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     public CategoryAdapter(FragmentManager fragmentManager, Context context) {
         super(fragmentManager);
         mContext = context;
-        // dodali smo context zato da kad uzimamo naslove tabova, ne moramo uzet hardkodirane stringove nego pristupit preko strings.xml
     }
 
     @Override

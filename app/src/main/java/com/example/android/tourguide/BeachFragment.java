@@ -19,12 +19,12 @@ public class BeachFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
 
         ArrayList<Site> beach = new ArrayList<>();
-        beach.add(new Site("Bačvice", R.drawable.beach_bacvice, "Uvala Bačvice"));
-        beach.add(new Site("Bene", R.drawable.beach_bene, "Šetalište Marina Tartaglie"));
-        beach.add(new Site("Firule", R.drawable.beach_firule, "Ulica Uvala Zenta"));
-        beach.add(new Site("Kašjuni", R.drawable.beach_kasjuni, "Šetalište Ivana Meštrovića 55"));
-        beach.add(new Site("Obojena", R.drawable.beach_obojena, "Šetalište Ivana Meštrovića 35"));
-        beach.add(new Site("Žnjan", R.drawable.beach_znjan, "Šetalište Pape Ivana Pavla II 31"));
+        beach.add(new Site(getString(R.string.beach_bacvice_name), R.drawable.beach_bacvice, getString(R.string.beach_bacvice_address)));
+        beach.add(new Site(getString(R.string.beach_bene_name), R.drawable.beach_bene, getString(R.string.beach_bene_address)));
+        beach.add(new Site(getString(R.string.beach_firule_name), R.drawable.beach_firule, getString(R.string.beach_firule_address)));
+        beach.add(new Site(getString(R.string.beach_kasjuni_name), R.drawable.beach_kasjuni, getString(R.string.beach_kasjuni_address)));
+        beach.add(new Site(getString(R.string.beach_obojena_name), R.drawable.beach_obojena, getString(R.string.beach_obojena_address)));
+        beach.add(new Site(getString(R.string.beach_znjan_name), R.drawable.beach_znjan, getString(R.string.beach_znjan_address)));
 
         ListView listView = rootView.findViewById(R.id.list_view);
         SiteAdapter adapter = new SiteAdapter(getActivity(), beach, R.color.colorBeach);

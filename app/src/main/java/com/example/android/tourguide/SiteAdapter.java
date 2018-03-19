@@ -44,14 +44,14 @@ public class SiteAdapter extends ArrayAdapter<Site> {
 
         TextView address = listView.findViewById(R.id.address);
         if (currentSite.hasAddress()) {
-            address.setText(mContext.getResources().getString(R.string.address)+" " + currentSite.getAddress());
+            address.setText(mContext.getResources().getString(R.string.address) + " " + currentSite.getAddress());
         } else {
             address.setVisibility(View.GONE);
         }
 
         TextView workingHours = listView.findViewById(R.id.hours);
         if (currentSite.hasHours()) {
-            workingHours.setText(mContext.getResources().getString(R.string.hours) +" " +currentSite.getWorkingHours());
+            workingHours.setText(mContext.getResources().getString(R.string.hours) + " " + currentSite.getWorkingHours());
 
         } else {
             workingHours.setVisibility(View.GONE);
@@ -59,7 +59,7 @@ public class SiteAdapter extends ArrayAdapter<Site> {
 
         TextView number = listView.findViewById(R.id.number);
         if (currentSite.hasNumber()) {
-            number.setText(mContext.getResources().getString(R.string.number) +" " +currentSite.getTelephoneNumber());
+            number.setText(mContext.getResources().getString(R.string.number) + " " + currentSite.getTelephoneNumber());
         } else {
             number.setVisibility(View.GONE);
         }

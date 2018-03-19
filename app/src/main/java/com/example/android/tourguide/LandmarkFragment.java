@@ -19,16 +19,16 @@ public class LandmarkFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.site_list, container, false);
 
         ArrayList<Site> landmark = new ArrayList<>();
-        landmark.add(new Site(R.drawable.landmark_diocletian_palace, "Diocletian's Palace", "One of the reasons why Split is popular."));
-        landmark.add(new Site(R.drawable.landmark_grgur_ninski, "Grgur Ninski", "Statue with a famous toe"));
-        landmark.add(new Site(R.drawable.landmark_let_me_pass_street, "Let me pass Street", "The narrowest street in the world"));
-        landmark.add(new Site(R.drawable.landmark_poljud, "Stadium Poljud", "The city stadium, built in the 80s."));
-        landmark.add(new Site(R.drawable.landmark_prokurative, "Prokurative", "Republic square where music festival occurs"));
-        landmark.add(new Site(R.drawable.landmark_riva, "Riva promenade", "The most famous street in Split"));
-        landmark.add(new Site(R.drawable.landmark_split_national_theater, "Split national theatre", "Old national theatre building"));
-        landmark.add(new Site(R.drawable.landmark_st_duje_cathedral, "St Duje cathedral", "Cathedral of the Split's saint"));
+        landmark.add(new Site(R.drawable.landmark_diocletian_palace, getString(R.string.landmark_diocletian_palace_name), getString(R.string.landmark_diocletian_palace_description)));
+        landmark.add(new Site(R.drawable.landmark_grgur_ninski, getString(R.string.landmark_grgur_ninski_name), getString(R.string.landmark_grgur_ninski_description)));
+        landmark.add(new Site(R.drawable.landmark_let_me_pass_street, getString(R.string.landmark_let_me_pass_street_name), getString(R.string.landmark_let_me_pass_street_description)));
+        landmark.add(new Site(R.drawable.landmark_poljud, getString(R.string.landmark_poljud_name), getString(R.string.landmark_poljud_description)));
+        landmark.add(new Site(R.drawable.landmark_prokurative, getString(R.string.landmark_prokurative_name), getString(R.string.landmark_prokurative_description)));
+        landmark.add(new Site(R.drawable.landmark_riva, getString(R.string.landmark_riva_name), getString(R.string.landmark_riva_description)));
+        landmark.add(new Site(R.drawable.landmark_split_national_theater, getString(R.string.landmark_split_national_theater_name), getString(R.string.landmark_split_national_theater_description)));
+        landmark.add(new Site(R.drawable.landmark_st_duje_cathedral, getString(R.string.landmark_st_duje_cathedral_name), getString(R.string.landmark_st_duje_cathedral_description)));
 
-        ListView listView = rootView.findViewById(R.id.list_view); // zasto ne  rootview.find--- a ne getActivity()
+        ListView listView = rootView.findViewById(R.id.list_view);
         SiteAdapter adapter = new SiteAdapter(getActivity(), landmark, R.color.colorLandmark);
         listView.setAdapter(adapter);
 
