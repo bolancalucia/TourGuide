@@ -34,7 +34,7 @@ public class SiteAdapter extends ArrayAdapter<Site> {
                     .inflate(R.layout.list_item, parent, false);
         }
 
-        Site currentSite = getItem(position); // pozicioniramo se na trenutni element i dohvacamo njegove podatke
+        Site currentSite = getItem(position);
 
         ImageView image = listView.findViewById(R.id.image);
         image.setImageResource(currentSite.getImageResourceId());
