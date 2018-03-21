@@ -8,10 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
+
 
 public class SiteAdapter extends ArrayAdapter<Site> {
 
@@ -28,53 +27,58 @@ public class SiteAdapter extends ArrayAdapter<Site> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View listView = convertView;
-        if (listView == null) {
-            listView = LayoutInflater.from(getContext())
+        MainActivity.ViewHolder holder = null;
+
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext())
                     .inflate(R.layout.list_item, parent, false);
+            holder = new MainActivity.ViewHolder();
+            holder.name = convertView.findViewById(R.id.name);
+            holder.address = convertView.findViewById(R.id.address);
+            holder.number = convertView.findViewById(R.id.number);
+            holder.description = convertView.findViewById(R.id.description);
+            holder.workingHours = convertView.findViewById(R.id.hours);
+            holder.image = convertView.findViewById(R.id.image);
+            holder.textContainer = convertView.findViewById(R.id.text_container);
+            convertView.setTag(holder);
+        }
+        else {
+            holder = (MainActivity.ViewHolder) convertView.getTag();
         }
 
         Site currentSite = getItem(position);
 
-        ImageView image = listView.findViewById(R.id.image);
-        image.setImageResource(currentSite.getImageResourceId());
+        holder.image.setImageResource(currentSite.getImageResourceId());
+        holder.name.setText(currentSite.getName());
 
-        TextView name = listView.findViewById(R.id.name);
-        name.setText(currentSite.getName());
-
-        TextView address = listView.findViewById(R.id.address);
         if (currentSite.hasAddress()) {
-            address.setText(mContext.getResources().getString(R.string.address) + " " + currentSite.getAddress());
+            holder.address.setText(mContext.getResources().getString(R.string.address) + " " + currentSite.getAddress());
         } else {
-            address.setVisibility(View.GONE);
+            holder.address.setVisibility(View.GONE);
         }
 
-        TextView workingHours = listView.findViewById(R.id.hours);
         if (currentSite.hasHours()) {
-            workingHours.setText(mContext.getResources().getString(R.string.hours) + " " + currentSite.getWorkingHours());
+            holder.workingHours.setText(mContext.getResources().getString(R.string.hours) + " " + currentSite.getWorkingHours());
 
         } else {
-            workingHours.setVisibility(View.GONE);
+            holder.workingHours.setVisibility(View.GONE);
         }
 
-        TextView number = listView.findViewById(R.id.number);
         if (currentSite.hasNumber()) {
-            number.setText(mContext.getResources().getString(R.string.number) + " " + currentSite.getTelephoneNumber());
+            holder.number.setText(mContext.getResources().getString(R.string.number) + " " + currentSite.getTelephoneNumber());
         } else {
-            number.setVisibility(View.GONE);
+            holder.number.setVisibility(View.GONE);
         }
 
-        TextView description = listView.findViewById(R.id.description);
         if (currentSite.hasDescription()) {
-            description.setText(currentSite.getDescription());
+            holder.description.setText(currentSite.getDescription());
         } else {
-            description.setVisibility(View.GONE);
+            holder.description.setVisibility(View.GONE);
         }
 
-        View textContainer = listView.findViewById(R.id.text_container);
         int color = ContextCompat.getColor(getContext(), mColorResourceId);
-        textContainer.setBackgroundColor(color);
+        holder.textContainer.setBackgroundColor(color);
 
-        return listView;
+        return convertView;
     }
 }

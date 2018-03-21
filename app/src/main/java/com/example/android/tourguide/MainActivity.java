@@ -4,8 +4,22 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    static class ViewHolder {
+        TextView name;
+        TextView address;
+        TextView number;
+        TextView description;
+        TextView workingHours;
+        ImageView image;
+        View textContainer;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,4 +34,5 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
+
 }
